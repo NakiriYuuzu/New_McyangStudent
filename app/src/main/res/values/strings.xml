@@ -1,0 +1,61 @@
+<resources>
+    <string name="applicationName">情境劇本Beacon互動教學工具</string>
+
+    <!-- TODO: AlertBuilder -->
+    <string name="alert_positive">確認</string>
+    <string name="alert_negative">取消</string>
+
+    <!-- TODO: Splash Screen -->
+    <string name="splash_Prev">上一頁</string>
+    <string name="splash_Next">下一頁</string>
+    <string name="splash_Start">開始使用</string>
+    <string name="splash_CheckBox">不再提示</string>
+
+    <!-- TODO: Login -->
+    <string name="login_text_Account">帳號</string>
+    <string name="login_text_Password">密碼</string>
+    <string name="login_toggle_RememberMe">記住我</string>
+    <string name="login_btn_Login">登入</string>
+    <string name="login_error_empty">請輸入帳號和密碼！</string>
+    <string name="login_error_wrongInput">帳號或密碼錯誤！</string>
+    <string name="login_error_noInternet">無法建立連線！</string>
+
+    <!-- TODO: Main -->
+    <string name="main_text_Home">目錄</string>
+    <string name="main_text_Course">課程</string>
+    <string name="main_text_QA">答題</string>
+    <string name="main_text_Group">群組</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TODO: Home -->
+    <string name="home_text_Hello">您好,</string>
+    <string name="home_text_Welcome">歡迎使用情境劇本Beacon互動教學工具</string>
+    <string name="home_text_courseNowNone">課程：暫無課程，請加入課程</string>
+    <string name="home_text_courseTeacher">老師：暫無</string>
+    <string name="home_text_function">功能</string>
+    <string name="home_text_btnJoin">加入課程</string>
+    <string name="home_text_btnLeave">離開課程</string>
+    <string name="home_text_btnAsking">提問老師</string>
+    <string name="home_text_btnDomJudge">DomJudge學習歷程</string>
+
+    <!-- TODO: Course -->
+    <string name="course_text_Course">我的課程</string>
+    <string name="course_text_fail2Load">與後臺連接失敗，請查看網絡或稍後嘗試。</string>
+    <string name="course_text_fail2Load404">無法取得資料請稍後在嘗試。</string>
+
+    <!-- TODO: QA -->
+    <string name="qa_text_QA">互動問答搶</string>
+    <string name="qa_text_QA_Race">互動搶答</string>
+    <string name="qa_text_QA_Quiz">互動答題</string>
+    <string name="qa_text_Qa_Race_detail">等待老師發起廣播之後就可以\n開始搶答!</string>
+    <string name="qa_text_Qa_Quiz_detail">等待老師開放題目之後便可開始\n作答題目！</string>
+
+    <!-- TODO: Group -->
+    <string name="group_text_Group">群組互動</string>
+    <string name="group_text_Create">組成群組</string>
+    <string name="group_text_Chat">群組聊天室</string>
+    <string name="group_text_Create_detail">可以選擇當組長或組員之後等待\n老師確認便可完成組隊！</string>
+    <string name="group_text_Chat_detail">可以跟組内的同學一起討論\n老師出的課題!</string>
+
+</resources>
