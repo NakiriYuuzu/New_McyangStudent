@@ -73,7 +73,7 @@ class CourseFragment : Fragment(R.layout.fragment_course) {
     }
 
     private fun getCourse() {
-        yuuzuApi.api(Request.Method.POST, AppConfig.API_SHOW_COURSE, object :
+        yuuzuApi.api(Request.Method.POST, AppConfig.API_LIST_COURSE, object :
             YuuzuApi.YuuzuApiListener {
             override fun onSuccess(data: String) {
                 val jsonArray = JSONArray(data)

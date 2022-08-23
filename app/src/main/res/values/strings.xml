@@ -4,6 +4,10 @@
     <!-- TODO: AlertBuilder -->
     <string name="alert_positive">確認</string>
     <string name="alert_negative">取消</string>
+    <string name="alert_error_title_noInternet">網絡異常</string>
+    <string name="alert_error_noInternet">無法建立與後臺連線！請檢查網絡是否打開！</string>
+    <string name="alert_error_title_json">系統上的錯誤</string>
+    <string name="alert_error_json">錯誤信息：</string>
 
     <!-- TODO: Splash Screen -->
     <string name="splash_Prev">上一頁</string>
@@ -57,5 +61,14 @@
     <string name="group_text_Chat">群組聊天室</string>
     <string name="group_text_Create_detail">可以選擇當組長或組員之後等待\n老師確認便可完成組隊！</string>
     <string name="group_text_Chat_detail">可以跟組内的同學一起討論\n老師出的課題!</string>
+
+    <!-- TODO: Sign -->
+    <string name="sign_text_Sign">課堂簽到</string>
+    <string name="sign_error_title_Leave">確定要離開嗎？</string>
+    <string name="sign_error_title_Leave_detail">離開後可能會導致短暫時間内無法使用簽到的功能！</string>
+    <string name="sign_error_title_Timeout">接收不到老師的藍牙訊號</string>
+    <string name="sign_error_title_Timeout_detail">請等待老師廣播！\n老師已經廣播的情況下，請先離開此畫面在重啓藍牙，之後等待5秒鐘在回到此畫面！</string>
+    <string name="sign_alert_title_Send">確認簽到</string>
+    <string name="sign_alert_title_Send_Detail">確認簽到課程：</string>
 
 </resources>

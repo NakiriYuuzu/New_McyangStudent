@@ -1,10 +1,19 @@
 package tw.edu.studentmcyang.yuuzu_lib
 
+import android.Manifest
+import android.bluetooth.BluetoothManager
 import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Handler
+import android.os.Looper
+import androidx.core.app.ActivityCompat
 import org.altbeacon.beacon.*
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 class BeaconController(
-    ctx: Context
+    val ctx: Context,
+    var region: Region
 ) {
     companion object {
         private const val TAG = "RangingActivity"
@@ -12,25 +21,51 @@ class BeaconController(
     }
 
     private var beacon: Beacon? = null
-    private var beaconManager: BeaconManager
+    private var beaconManager: BeaconManager = BeaconManager.getInstanceForApplication(ctx)
     private var beaconTransmitter: BeaconTransmitter? = null
-    private var region: Region
     private var beaconParser: BeaconParser? = null
 
+    private var beaconIsScanning = false
+
     init {
-        beaconManager = BeaconManager.getInstanceForApplication(ctx)
         beaconManager.beaconParsers.add(BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"))
         beaconManager.foregroundScanPeriod = DEFAULT_FOREGROUND_SCAN_PERIOD
 
         beaconParser = BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25")
+    }
 
-        region = Region("ranged region", null, null, null)
+    fun fixLollipop() {
+        val bluetoothManager = ctx.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
+        if (ActivityCompat.checkSelfPermission(
+                ctx,
+                Manifest.permission.BLUETOOTH_CONNECT
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            return
+        }
+
+        bluetoothManager.adapter.disable()
+        Handler(Looper.getMainLooper()).postDelayed({
+            bluetoothManager.adapter.enable()
+        }, 2500)
     }
 
     fun startScanning(beaconModify: BeaconModify) {
         beaconManager.removeAllRangeNotifiers()
         beaconManager.addRangeNotifier(beaconModify::modifyData)
         beaconManager.startRangingBeacons(region)
+        beaconIsScanning = true
+    }
+
+    fun stopScanning() {
+        beaconManager.removeAllMonitorNotifiers()
+        beaconManager.stopRangingBeacons(region)
+        beaconManager.removeAllRangeNotifiers()
+        beaconIsScanning = false
+    }
+
+    fun isScanning() :Boolean {
+        return beaconIsScanning
     }
 
 //    fun beaconInit(url: String?) {
@@ -51,11 +86,6 @@ class BeaconController(
 //        beaconManager!!.startRangingBeacons(region!!)
 //    }
 //
-//    fun stopScanning() {
-//        beaconManager!!.removeAllMonitorNotifiers()
-//        beaconManager!!.stopRangingBeacons(region!!)
-//        beaconManager!!.removeAllRangeNotifiers()
-//    }
 //
 //    fun init_Sign_BroadcastBeacon() {
 //        try {

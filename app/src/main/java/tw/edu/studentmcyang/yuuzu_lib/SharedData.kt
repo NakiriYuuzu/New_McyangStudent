@@ -13,6 +13,10 @@ class SharedData(activity: Activity) {
         saveName("")
     }
 
+    fun quitCourse() {
+        saveSignID("")
+    }
+
     fun saveSplashStatus(status: Boolean) {
         val editor = pref.edit()
         editor.putBoolean("splash_status", status)
@@ -63,4 +67,13 @@ class SharedData(activity: Activity) {
         return pref.getString("name", null).toString()
     }
 
+    fun saveSignID(signId: String) {
+        val editor = pref.edit()
+        editor.putString("signId", signId)
+        editor.apply()
+    }
+
+    fun getSignID(): String {
+        return pref.getString("signId", null).toString()
+    }
 }

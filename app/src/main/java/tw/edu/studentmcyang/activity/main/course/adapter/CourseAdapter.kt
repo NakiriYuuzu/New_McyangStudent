@@ -16,7 +16,7 @@ class CourseAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
         return CourseViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.rvlayout_course,
+                R.layout.rvlayout_type01,
                 parent,
                 false
             )
@@ -46,7 +46,7 @@ class CourseAdapter(
     }
 
     class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val courseName: MaterialTextView = itemView.findViewById(R.id.rvlayout_text_Course)
-        val teacherName: MaterialTextView = itemView.findViewById(R.id.rvlayout_text_Teacher)
+        val courseName: MaterialTextView = itemView.findViewById(R.id.rvlayout_text_Main)
+        val teacherName: MaterialTextView = itemView.findViewById(R.id.rvlayout_text_Sub)
     }
 }

@@ -30,10 +30,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activity.main.sign.SignActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.login.SplashActivity"
             android:exported="true"
             android:label="@string/applicationName"
-            android:theme="@style/Theme.StudentMcyang" >
+            android:theme="@style/Theme.StudentMcyang">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,7 +48,6 @@
             android:exported="true"
             android:screenOrientation="userPortrait"
             tools:ignore="LockedOrientationActivity" />
-
         <activity
             android:name=".activity.main.MainActivity"
             android:exported="true"

@@ -37,6 +37,9 @@ class DialogHelper(
             .setPositiveButton(R.string.alert_positive) { dialogInterface: DialogInterface?, i: Int ->
                 onPositiveListener.onPositiveClick(dialogInterface, i)
             }
+            .setNegativeButton(R.string.alert_negative) { dialogInterface: DialogInterface?, _: Int ->
+                dialogInterface?.dismiss()
+            }
             .show()
     }
 
