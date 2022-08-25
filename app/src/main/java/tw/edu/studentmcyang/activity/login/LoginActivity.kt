@@ -14,7 +14,7 @@ import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONObject
 import tw.edu.studentmcyang.AppConfig
 import tw.edu.studentmcyang.R
-import tw.edu.studentmcyang.activity.main.MainActivity
+import tw.edu.studentmcyang.activity.MainActivity
 import tw.edu.studentmcyang.yuuzu_lib.DialogHelper
 import tw.edu.studentmcyang.yuuzu_lib.SharedData
 import tw.edu.studentmcyang.yuuzu_lib.ViewHelper
@@ -93,39 +93,33 @@ class LoginActivity : AppCompatActivity() {
         val pass = password.text.toString()
 
         if (acc.isNotBlank() && acc != "" && pass.isNotBlank() && pass != "") {
-            yuuzuApi.api(Request.Method.POST, AppConfig.API_LOGIN, object :
+            yuuzuApi.api(Request.Method.POST, AppConfig.URL_LOGIN, object :
                 YuuzuApi.YuuzuApiListener {
                 override fun onSuccess(data: String) {
                     val jsonObject = JSONObject(data)
-                    val status = jsonObject.get("status").toString()
 
-                    if (status == "true") {
-                        val id = jsonObject.get("S_id").toString()
-                        val name = jsonObject.get("S_Name").toString()
+                    val id = jsonObject.get(AppConfig.API_SID).toString()
+                    val name = jsonObject.get(AppConfig.API_SNAME).toString()
 
-                        if (checkBox.isChecked) {
-                            sharedData.saveLoginAcc(acc)
-                            sharedData.saveLoginPwd(pass)
-                        }
+                    if (checkBox.isChecked) {
+                        sharedData.saveLoginAcc(acc)
+                        sharedData.saveLoginPwd(pass)
+                    }
 
-                        sharedData.saveID(id)
-                        sharedData.saveName(name)
+                    sharedData.saveID(id)
+                    sharedData.saveName(name)
 
-                        Handler(Looper.getMainLooper()).postDelayed({
-                            if (dialogHelper.dialogIsLoading())
-                                dialogHelper.dismissLoadingDialog()
-
-                            Intent(this@LoginActivity, MainActivity::class.java).apply {
-                                startActivity(this)
-                            }
-                        }, 1000)
-
-                    } else {
+                    Handler(Looper.getMainLooper()).postDelayed({
                         if (dialogHelper.dialogIsLoading())
                             dialogHelper.dismissLoadingDialog()
 
-                        dialogHelper.showDialog(getString(R.string.login_error_wrongInput), "")
-                    }
+                        Intent(this@LoginActivity, MainActivity::class.java).apply {
+                            startActivity(this)
+                        }
+                    }, 1000)
+
+                    if (dialogHelper.dialogIsLoading())
+                        dialogHelper.dismissLoadingDialog()
                 }
 
                 override fun onError(error: VolleyError) {
@@ -134,7 +128,15 @@ class LoginActivity : AppCompatActivity() {
 
                     if (error.networkResponse != null) {
                         if (error.networkResponse.statusCode == 400) {
-                            dialogHelper.showDialog(getString(R.string.login_error_wrongInput), "")
+                            dialogHelper.showDialog(
+                                getString(R.string.login_error_wrongInput),
+                                error.networkResponse.statusCode.toString()
+                            )
+                        } else {
+                            dialogHelper.showDialog(
+                                getString(R.string.alert_error_json),
+                                error.networkResponse.statusCode.toString()
+                            )
                         }
                     } else {
                         dialogHelper.showDialog(getString(R.string.login_error_noInternet), "")
@@ -143,8 +145,8 @@ class LoginActivity : AppCompatActivity() {
 
                 override val params: Map<String, String>
                     get() = mapOf(
-                        "S_Email" to acc,
-                        "S_Password" to pass
+                        AppConfig.API_EMAIL to acc,
+                        AppConfig.API_PASSWORD to pass
                     )
             })
         } else {

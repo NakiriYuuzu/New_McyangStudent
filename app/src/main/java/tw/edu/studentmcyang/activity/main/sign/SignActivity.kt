@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
@@ -54,7 +53,7 @@ class SignActivity : AppCompatActivity() {
     }
 
     private fun signSubmit() {
-        yuuzuApi.api(Request.Method.POST, AppConfig.API_PUSH_SIGN_COURSE, object :
+        yuuzuApi.api(Request.Method.POST, AppConfig.URL_PUSH_SIGN_COURSE, object :
             YuuzuApi.YuuzuApiListener {
             override fun onSuccess(data: String) {
                 try {
@@ -143,7 +142,7 @@ class SignActivity : AppCompatActivity() {
 
     private fun requestData() {
         beaconDtoList.forEach {
-            yuuzuApi.api(Request.Method.GET, AppConfig.API_LIST_SIGN_COURSE + "?id=${it.minor}", object: YuuzuApi.YuuzuApiListener{
+            yuuzuApi.api(Request.Method.GET, AppConfig.URL_LIST_SIGN_COURSE + "?id=${it.minor}", object: YuuzuApi.YuuzuApiListener{
                 override fun onSuccess(data: String) {
                     val jsonArray = JSONArray(data)
                     val list = ArrayList<Sign>()

@@ -5,10 +5,12 @@
       <map>
         <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/bottom_rounded.xml" value="0.268" />
         <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/ic_baseline_book_24.xml" value="0.396" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.268" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/ic_launcher_background.xml" value="0.268" />
         <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/rounded.xml" value="0.144" />
         <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/z_rounded.xml" value="0.173" />
         <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_login.xml" value="0.4451476793248945" />
-        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_main.xml" value="0.29324894514767935" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_main.xml" value="0.21574074074074073" />
         <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_sign.xml" value="0.4451476793248945" />
         <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_splash.xml" value="0.2514767932489452" />
         <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/custom_dialog_loading.xml" value="0.22534142640364188" />

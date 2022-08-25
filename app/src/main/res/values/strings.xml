@@ -8,6 +8,10 @@
     <string name="alert_error_noInternet">無法建立與後臺連線！請檢查網絡是否打開！</string>
     <string name="alert_error_title_json">系統上的錯誤</string>
     <string name="alert_error_json">錯誤信息：</string>
+    <string name="alert_error_400">欄位資料空白或有誤！</string>
+    <string name="alert_error_404">查無資料此資料！</string>
+    <string name="alert_error_406">不接受此資料來源！</string>
+    <string name="alert_error_500">網絡異常, 無法建立與後臺連線！</string>
 
     <!-- TODO: Splash Screen -->
     <string name="splash_Prev">上一頁</string>

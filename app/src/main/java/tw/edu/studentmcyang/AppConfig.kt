@@ -11,12 +11,20 @@ object AppConfig {
     const val TIMEOUT = 7
 
     // TODO: Api URL
-    private const val API_URL = "http://192.168.31.74:8081"
+    private const val URL_API = "http://192.168.31.74:8000"
 
-    const val API_LOGIN = "$API_URL/api/studentLogin/"
-    const val API_LIST_COURSE = "$API_URL/api/showCourse/"
-    const val API_LIST_SIGN_COURSE = "$API_URL/api/listSignCourse/"
-    const val API_PUSH_SIGN_COURSE = "$API_URL/api/courseSigned/"
+    const val URL_LOGIN = "$URL_API/api/StudentLogin/"
+    const val URL_LIST_COURSE = "$URL_API/api/showCourse/"
+    const val URL_LIST_SIGN_COURSE = "$URL_API/api/listSignCourse/"
+    const val URL_PUSH_SIGN_COURSE = "$URL_API/api/courseSigned/"
+
+    // TODO: Api Param
+    const val API_EMAIL = "S_email"
+    const val API_PASSWORD = "S_password"
+
+    const val API_SID = "S_id"
+    const val API_SNAME = "S_name"
+
 
     // TODO: SharedData Identifier
 
