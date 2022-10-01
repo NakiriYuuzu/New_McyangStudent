@@ -7,10 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.android.volley.Request
 import com.android.volley.VolleyError
 import com.facebook.shimmer.ShimmerFrameLayout
 import org.json.JSONArray
+import org.json.JSONException
 import tw.edu.studentmcyang.AppConfig
 import tw.edu.studentmcyang.R
 import tw.edu.studentmcyang.activity.main.course.adapter.CourseAdapter
@@ -20,8 +22,6 @@ import tw.edu.studentmcyang.yuuzu_lib.SharedData
 import tw.edu.studentmcyang.yuuzu_lib.YuuzuApi
 
 class CourseFragment : Fragment(R.layout.fragment_course) {
-
-    private var shimmerStatus = ""
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var shimmer: ShimmerFrameLayout
@@ -50,18 +50,6 @@ class CourseFragment : Fragment(R.layout.fragment_course) {
         getCourse()
         showShimmer()
         initRecyclerView()
-        Handler(Looper.getMainLooper()).postDelayed({
-            if (shimmerStatus.isNotBlank()) {
-                dialogHelper.showDialog(getString(R.string.course_text_fail2Load), "")
-
-            } else {
-                if (courseList.size > 0) {
-                    hideShimmer()
-                } else {
-                    dialogHelper.showDialog(getString(R.string.course_text_fail2Load), "")
-                }
-            }
-        }, 1500)
     }
 
     private fun initRecyclerView() {
@@ -76,33 +64,43 @@ class CourseFragment : Fragment(R.layout.fragment_course) {
         yuuzuApi.api(Request.Method.POST, AppConfig.URL_LIST_COURSE, object :
             YuuzuApi.YuuzuApiListener {
             override fun onSuccess(data: String) {
-                val jsonArray = JSONArray(data)
-                for (i in 0 until jsonArray.length()) {
-                    val course = jsonArray.getJSONObject(i)
-                    courseList.add(
-                        Course(
-                            course.getString("C_Name"),
-                            course.getInt("C_id"),
-                            course.getString("T_Name")
+                try {
+                    val jsonArray = JSONArray(data)
+                    for (i in 0 until jsonArray.length()) {
+                        val course = jsonArray.getJSONObject(i)
+                        courseList.add(
+                            Course(
+                                course.getString("C_name"),
+                                course.getInt("C_id"),
+                                course.getString("T_name")
+                            )
                         )
-                    )
+                    }
+
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        try {
+                            if (courseList.size > 0) {
+                                hideShimmer()
+                            } else {
+                                dialogHelper.sweetDialog(getString(R.string.course_alert_noCourseTitle), getString(R.string.course_alert_noCourseMessage), SweetAlertDialog.WARNING_TYPE, null)
+                            }
+                        } catch (e: Exception) {
+                            dialogHelper.sweetDialog(getString(R.string.course_text_fail2Load), "", SweetAlertDialog.ERROR_TYPE, null)
+                        }
+                    }, 1250)
+
+                } catch (e: JSONException) {
+                    dialogHelper.sweetDialog(getString(R.string.alert_error_json), "", SweetAlertDialog.ERROR_TYPE, null)
                 }
             }
 
             override fun onError(error: VolleyError) {
-                if (error.networkResponse != null) {
-                    if (error.networkResponse.statusCode == 400) {
-                        shimmerStatus = "400"
-                        dialogHelper.showDialog(getString(R.string.course_text_fail2Load404), "")
-                    }
-                } else {
-                    shimmerStatus = "error"
-                }
+                // Crash show UI Change it to MainActivity [When No Server Side!]
             }
 
             override val params: Map<String, String>
                 get() = mapOf(
-                    "S_id" to sharedData.getID()
+                    AppConfig.API_SID to sharedData.getSid()
                 )
         })
     }
@@ -130,6 +128,11 @@ class CourseFragment : Fragment(R.layout.fragment_course) {
 
     override fun onPause() {
         super.onPause()
+        hideShimmer()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
         hideShimmer()
     }
 }

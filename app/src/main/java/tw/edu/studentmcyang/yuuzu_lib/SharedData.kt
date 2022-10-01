@@ -9,12 +9,17 @@ class SharedData(activity: Activity) {
     val pref: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
 
     fun logout() {
-        saveID("")
-        saveName("")
+        saveSid("")
+        saveSname("")
+        quitCourse()
     }
 
     fun quitCourse() {
         saveSignID("")
+        saveCourseId("")
+        saveTname("")
+        saveCourseName("")
+        saveSignDate("")
     }
 
     fun saveSplashStatus(status: Boolean) {
@@ -47,23 +52,23 @@ class SharedData(activity: Activity) {
         return pref.getString("login_pwd", null).toString()
     }
 
-    fun saveID(id: String) {
+    fun saveSid(id: String) {
         val editor = pref.edit()
         editor.putString("id", id)
         editor.apply()
     }
 
-    fun getID(): String {
+    fun getSid(): String {
         return pref.getString("id", null).toString()
     }
 
-    fun saveName(name: String) {
+    fun saveSname(name: String) {
         val editor = pref.edit()
         editor.putString("name", name)
         editor.apply()
     }
 
-    fun getName(): String {
+    fun getSname(): String {
         return pref.getString("name", null).toString()
     }
 
@@ -75,5 +80,55 @@ class SharedData(activity: Activity) {
 
     fun getSignID(): String {
         return pref.getString("signId", null).toString()
+    }
+
+    fun saveSignDate(signDate: String) {
+        val editor = pref.edit()
+        editor.putString("signDate", signDate)
+        editor.apply()
+    }
+
+    fun getSignDate(): String {
+        return pref.getString("signDate", null).toString()
+    }
+
+    fun saveTname(name: String) {
+        val editor = pref.edit()
+        editor.putString("tname", name)
+        editor.apply()
+    }
+
+    fun getTname(): String {
+        return pref.getString("tname", null).toString()
+    }
+
+    fun saveCourseName(name: String) {
+        val editor = pref.edit()
+        editor.putString("courseName", name)
+        editor.apply()
+    }
+
+    fun getCourseName(): String {
+        return pref.getString("courseName", null).toString()
+    }
+
+    fun saveCourseId(id: String) {
+        val editor = pref.edit()
+        editor.putString("courseId", id)
+        editor.apply()
+    }
+
+    fun getCourseId(): String {
+        return pref.getString("courseId", null).toString()
+    }
+
+    fun saveTeamDescId(id: String) {
+        val editor = pref.edit()
+        editor.putString("teamDescId", id)
+        editor.apply()
+    }
+
+    fun getTeamDescId(): String {
+        return pref.getString("teamDescId", null).toString()
     }
 }

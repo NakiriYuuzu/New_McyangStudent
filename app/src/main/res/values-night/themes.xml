@@ -10,11 +10,8 @@
         <item name="colorSecondaryVariant">@color/dark_green_secondary_color</item>
         <item name="colorOnSecondary">@color/font_black</item>
 
-        <item name="colorOnBackground">@color/dark_background</item>
-        <item name="android:background">@color/dark_background</item>
-
         <!-- Top Bar Status Color -->
-        <item name="colorPrimaryDark">@color/dark_blue_main_color</item>
+        <item name="colorPrimaryDark">@color/dark_blue_secondary_color</item>
     </style>
 
     <!-- Custom Text color style -->
@@ -31,7 +28,7 @@
 
     <style name="CustomButton_GreenLight" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">@color/font_white</item>
-        <item name="android:backgroundTint">@color/dark_green_secondary_color</item>
+        <item name="android:backgroundTint">@color/dark_blue_secondary_color</item>
     </style>
 
     <!-- Custom Layout Style -->
@@ -44,7 +41,7 @@
     <!-- Custom Dialog -->
 
     <style name="Style_CustomDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="colorSurface">@android:color/transparent</item>
+        <item name="colorSurface">@color/dark_background</item>
         <item name="dialogCornerRadius">25dp</item>
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance_custom_corners_Rounded</item>
         <item name="materialAlertDialogTitlePanelStyle">@style/Title.Panel.Center</item>
@@ -71,6 +68,14 @@
         <item name="cardBackgroundColor">@color/dark_background</item>
     </style>
 
+    <style name="CustomCard_ThemeBackground" parent="">
+        <item name="cardBackgroundColor">@color/dark_background</item>
+    </style>
+
+    <style name="CustomCard_ThemeBackground_Secondary" parent="">
+        <item name="cardBackgroundColor">@color/dark_background_secondary</item>
+    </style>
+
     <style name="CustomCardCorners_BottomLeft" parent="@style/Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance_custom_corners_BottomLeft</item>
         <item name="cardBackgroundColor">@color/dark_blue_secondary_color</item>
@@ -83,7 +88,7 @@
 
     <style name="CustomCardCorners_ALL" parent="@style/Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance_custom_corners_Rounded</item>
-        <item name="cardBackgroundColor">@color/dark_blue_secondary_color</item>
+        <item name="cardBackgroundColor">@color/dark_background_secondary</item>
     </style>
 
     <style name="CustomCardCorners_ALL_AliceBlue" parent="@style/Widget.MaterialComponents.CardView">
@@ -99,6 +104,11 @@
     <style name="CustomCardCorners_Circle" parent="@style/Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance_custom_corners_Circle</item>
         <item name="cardBackgroundColor">@color/dark_background_secondary</item>
+    </style>
+
+    <style name="CustomCardCorners_Circle_Theme" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance_custom_corners_Circle</item>
+        <item name="cardBackgroundColor">@color/dark_blue_secondary_color</item>
     </style>
 
     <!--Rounded Shape-->

@@ -3,6 +3,7 @@ package tw.edu.studentmcyang.yuuzu_lib.permission
 import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
+import android.os.Build
 import android.provider.Settings
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
@@ -17,9 +18,29 @@ class LocationRequest(private val activity: Activity) : MultiplePermissionsListe
         Dexter.withContext(activity)
             .withPermissions(
                 android.Manifest.permission.ACCESS_COARSE_LOCATION,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
+                android.Manifest.permission.ACCESS_FINE_LOCATION,
             ).withListener(this)
             .check()
+    }
+
+    fun requestBluetooth() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            Dexter.withContext(activity)
+                .withPermissions(
+                    android.Manifest.permission.BLUETOOTH,
+                    android.Manifest.permission.BLUETOOTH_ADMIN,
+                    android.Manifest.permission.BLUETOOTH_SCAN,
+                    android.Manifest.permission.BLUETOOTH_ADVERTISE
+                ).withListener(this)
+                .check()
+        } else {
+            Dexter.withContext(activity)
+                .withPermissions(
+                    android.Manifest.permission.BLUETOOTH,
+                    android.Manifest.permission.BLUETOOTH_ADMIN,
+                ).withListener(this)
+                .check()
+        }
     }
 
     override fun onPermissionsChecked(p0: MultiplePermissionsReport?) {

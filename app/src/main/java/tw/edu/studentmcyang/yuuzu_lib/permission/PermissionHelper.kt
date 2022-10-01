@@ -86,6 +86,7 @@ class PermissionHelper(private val activity: Activity) {
         }
 
         locationRequest.requestLocation()
+        locationRequest.requestBluetooth()
 
         val results = result.split(" ")
         results.forEach {

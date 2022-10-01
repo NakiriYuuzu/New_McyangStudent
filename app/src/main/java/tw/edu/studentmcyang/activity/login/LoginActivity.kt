@@ -61,6 +61,8 @@ class LoginActivity : AppCompatActivity() {
         loginBtn = findViewById(R.id.login_btn_signIn)
         checkBox = findViewById(R.id.login_checkBox_rememberMe)
 
+        dialogHelper.initLoadingDialog("Loading...")
+
         viewHelper.setupUI(findViewById(R.id.loginHeader_CardView1))
         viewHelper.setupUI(findViewById(R.id.loginHeader_CardView2))
 
@@ -71,7 +73,8 @@ class LoginActivity : AppCompatActivity() {
             password.setText(sharedData.getLoginPwd())
             checkBox.isChecked = true
             // FIXME : REMOVE THIS AFTER FINISH DEV
-            login()
+            if (AppConfig.DEBUG)
+                login()
         }
     }
 
@@ -93,7 +96,7 @@ class LoginActivity : AppCompatActivity() {
         val pass = password.text.toString()
 
         if (acc.isNotBlank() && acc != "" && pass.isNotBlank() && pass != "") {
-            yuuzuApi.api(Request.Method.POST, AppConfig.URL_LOGIN, object :
+            yuuzuApi.api(Request.Method.POST, AppConfig.URL_LOGINS, object :
                 YuuzuApi.YuuzuApiListener {
                 override fun onSuccess(data: String) {
                     val jsonObject = JSONObject(data)
@@ -101,13 +104,22 @@ class LoginActivity : AppCompatActivity() {
                     val id = jsonObject.get(AppConfig.API_SID).toString()
                     val name = jsonObject.get(AppConfig.API_SNAME).toString()
 
+                    if (
+                        sharedData.getLoginAcc() != "null" && sharedData.getLoginAcc().isNotEmpty()
+                        && sharedData.getLoginPwd() != "null" && sharedData.getLoginPwd().isNotEmpty()
+                    ) {
+                        if (sharedData.getLoginAcc() != acc || sharedData.getLoginPwd() != pass) {
+                            sharedData.quitCourse()
+                        }
+                    }
+
                     if (checkBox.isChecked) {
                         sharedData.saveLoginAcc(acc)
                         sharedData.saveLoginPwd(pass)
                     }
 
-                    sharedData.saveID(id)
-                    sharedData.saveName(name)
+                    sharedData.saveSid(id)
+                    sharedData.saveSname(name)
 
                     Handler(Looper.getMainLooper()).postDelayed({
                         if (dialogHelper.dialogIsLoading())
@@ -117,9 +129,6 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(this)
                         }
                     }, 1000)
-
-                    if (dialogHelper.dialogIsLoading())
-                        dialogHelper.dismissLoadingDialog()
                 }
 
                 override fun onError(error: VolleyError) {

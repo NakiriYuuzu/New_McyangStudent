@@ -14,7 +14,8 @@
     <color name="font_black">#D0000000</color>
     <color name="font_white">#FFFFFF</color>
     <color name="font_gray">#808080</color>
-    <color name="light_background">#F0F8FF</color>
+    <color name="light_background">#bef0ff</color>
+    <color name="light_background_secondary">#F0F8FF</color>
 
     <!-- TODO: DARK THEME COLOR -->
 

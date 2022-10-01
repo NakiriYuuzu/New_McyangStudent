@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import tw.edu.studentmcyang.R
+import tw.edu.studentmcyang.yuuzu_lib.permission.PermissionHelper
 
 class MainActivity : AppCompatActivity() {
 
