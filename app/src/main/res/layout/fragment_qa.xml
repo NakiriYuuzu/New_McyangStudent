@@ -110,14 +110,17 @@
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/qa_text_sub_01"
                         style="@style/Style_CustomText_Gray"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginEnd="16dp"
                         android:background="@android:color/transparent"
                         android:text="@string/qa_text_Qa_Race_detail"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toEndOf="@+id/qa_image_01" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -166,14 +169,16 @@
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/qa_text_sub_02"
                         style="@style/Style_CustomText_Gray"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
+                        android:layout_marginEnd="16dp"
                         android:background="@android:color/transparent"
                         android:text="@string/qa_text_Qa_Quiz_detail"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/qa_image_02" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

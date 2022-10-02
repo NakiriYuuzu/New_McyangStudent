@@ -63,9 +63,10 @@ class ChatActivity : AppCompatActivity() {
     private fun sendMessage(msg: String) {
         ref = database.getReference(chatRoomId).child(Calendar.getInstance().timeInMillis.toString())
         val message = HashMap<String, String>()
+        val datetime = "${Calendar.getInstance().get(Calendar.MONTH) + 1}/${Calendar.getInstance().get(Calendar.DAY_OF_MONTH)} ${Calendar.getInstance().get(Calendar.HOUR_OF_DAY)}:${Calendar.getInstance().get(Calendar.MINUTE)}"
         message[AppConfig.FIREBASE_USER] = sharedData.getSname()
         message[AppConfig.FIREBASE_MESSAGE] = msg
-        message[AppConfig.FIREBASE_DATETIME] = Date().toString()
+        message[AppConfig.FIREBASE_DATETIME] = datetime
         ref.setValue(message)
     }
 
@@ -123,6 +124,9 @@ class ChatActivity : AppCompatActivity() {
                             )
                         )
                     }
+
+                    if (roomList.size == 0)
+                        dialogHelper.sweetDialog("目前沒有聊天室", "請等待老師建立聊天室", SweetAlertDialog.WARNING_TYPE, null)
 
                     roomAdapter.differ.submitList(roomList)
 
@@ -200,7 +204,7 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun getGroupList() {
-        yuuzuApi.api(Request.Method.GET, "${AppConfig.URL_LIST_TEAMDESC}?C_id=${sharedData.getCourseId()}&S_id=${sharedData.getSid()}", object :
+        yuuzuApi.api(Request.Method.GET, "${AppConfig.URL_LIST_TEAMDESC}?S_id=${sharedData.getSid()}", object :
             YuuzuApi.YuuzuApiListener {
             override fun onSuccess(data: String) {
                 val jsonArray = JSONArray(data)

@@ -69,14 +69,14 @@
     <string name="qa_text_QA">互動問答搶</string>
     <string name="qa_text_QA_Race">互動搶答</string>
     <string name="qa_text_QA_Quiz">互動答題</string>
-    <string name="qa_text_Qa_Race_detail">等待老師發起廣播之後就可以\n開始搶答!</string>
-    <string name="qa_text_Qa_Quiz_detail">等待老師開放題目之後便可開始\n作答題目！</string>
+    <string name="qa_text_Qa_Race_detail">等待老師發起廣播之後\n就可以開始搶答!</string>
+    <string name="qa_text_Qa_Quiz_detail">等待老師開放題目之後\n便可開始作答題目！</string>
 
     <!-- TODO: Group -->
     <string name="group_text_Group">群組互動</string>
     <string name="group_text_Create">組成群組</string>
     <string name="group_text_Chat">群組聊天室</string>
-    <string name="group_text_Create_detail">可以選擇當組長或組員之後等待\n老師確認便可完成組隊！</string>
+    <string name="group_text_Create_detail">可以選擇當組長或組員之後\n等待老師確認便可完成組隊！</string>
     <string name="group_text_Chat_detail">可以跟組内的同學一起討論\n老師出的課題!</string>
 
     <!-- TODO: Sign -->

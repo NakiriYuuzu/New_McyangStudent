@@ -22,13 +22,15 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/chatSendMessageTime"
+        style="@style/Style_CustomText_Gray"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:textSize="10sp"
-        tools:ignore="SmallSp"
-        style="@style/Style_CustomText_Gray"
+        android:textAlignment="textEnd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chatSendMessage"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chatSendMessage"
+        tools:ignore="SmallSp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
