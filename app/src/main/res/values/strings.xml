@@ -1,0 +1,115 @@
+<resources>
+    <string name="applicationName">情境劇本Beacon互動教學工具</string>
+
+    <!-- TODO: AlertBuilder -->
+    <string name="alert_positive">確認</string>
+    <string name="alert_negative">取消</string>
+    <string name="alert_leave">離開</string>
+    <string name="alert_finish">完成！</string>
+    <string name="alert_leave_Title">確定要離開嗎？</string>
+    <string name="alert_leave_Message">現在正在搜尋老師的訊號，請耐心等待！\n如果老師已經發出廣播還沒收到請重新打開藍牙</string>
+    <string name="alert_error_title_noInternet">網絡異常</string>
+    <string name="alert_error_noInternet">無法建立與後臺連線！請檢查網絡是否打開！</string>
+    <string name="alert_error_noServer">無法建立與後臺連線！請檢查網絡是否打開！</string>
+    <string name="alert_error_title_json">系統上的錯誤</string>
+    <string name="alert_error_json">錯誤信息：</string>
+    <string name="alert_error_400">欄位資料空白或有誤！</string>
+    <string name="alert_error_404">查無資料此資料！</string>
+    <string name="alert_error_406">不接受此資料來源！</string>
+    <string name="alert_error_417">資料庫欄位異常，目前無法新增資料！</string>
+    <string name="alert_error_500">網絡異常, 無法建立與後臺連線！</string>
+    <string name="alert_error_bleLollipop">已過去30秒，如果老師已經發起訊號，請重新打開藍牙！</string>
+    <string name="alert_beacon_NoMajorMinor">無法取得有效的課程ID，請在嘗試一次！</string>
+    <string name="alert_beacon_Exception">Beacon功能出現錯誤！</string>
+    <string name="alert_signFirst">請先簽到后在操作此功能。</string>
+    <string name="alert_signToday">發現簽到已過期，點擊確認將會導向至簽到畫面。</string>
+
+    <!-- TODO: Splash Screen -->
+    <string name="splash_Prev">上一頁</string>
+    <string name="splash_Next">下一頁</string>
+    <string name="splash_Start">開始使用</string>
+    <string name="splash_CheckBox">不再提示</string>
+
+    <!-- TODO: Login -->
+    <string name="login_text_Account">帳號</string>
+    <string name="login_text_Password">密碼</string>
+    <string name="login_toggle_RememberMe">記住我</string>
+    <string name="login_btn_Login">登入</string>
+    <string name="login_error_empty">請輸入帳號和密碼！</string>
+    <string name="login_error_wrongInput">帳號或密碼錯誤！</string>
+    <string name="login_error_noInternet">無法建立連線！</string>
+
+    <!-- TODO: Main -->
+    <string name="main_text_Home">目錄</string>
+    <string name="main_text_Course">課程</string>
+    <string name="main_text_QA">答題</string>
+    <string name="main_text_Group">群組</string>
+
+    <!-- TODO: Home -->
+    <string name="home_text_Hello">您好,</string>
+    <string name="home_text_Welcome">歡迎使用情境劇本Beacon互動教學工具</string>
+    <string name="home_text_courseNowNone">課程：暫無課程，請加入課程</string>
+    <string name="home_text_courseTeacher">老師：暫無</string>
+    <string name="home_text_function">其他功能</string>
+    <string name="home_text_btnJoin">加入課程</string>
+    <string name="home_text_btnLeave">離開課程</string>
+    <string name="home_text_btnAsking">提問老師</string>
+    <string name="home_text_btnDomJudge">DomJudge學習歷程</string>
+    <string name="home_text_btnSignOut">登出成功！</string>
+    <string name="home_text_confirm_Leave">確定要離開課程嗎？</string>
+
+    <!-- TODO: Course -->
+    <string name="course_text_Course">我的課程</string>
+    <string name="course_text_fail2Load">與後臺連接失敗，請查看網絡或稍後嘗試。</string>
+    <string name="course_text_fail2Load404">無法取得資料請稍後在嘗試。</string>
+    <string name="course_alert_noCourseTitle">查無課程！</string>
+    <string name="course_alert_noCourseMessage">請通知老師把你加入課程！</string>
+
+    <!-- TODO: QA -->
+    <string name="qa_text_QA">互動問答搶</string>
+    <string name="qa_text_QA_Race">互動搶答</string>
+    <string name="qa_text_QA_Quiz">互動答題</string>
+    <string name="qa_text_Qa_Race_detail">等待老師發起廣播之後\n就可以開始搶答!</string>
+    <string name="qa_text_Qa_Quiz_detail">等待老師開放題目之後\n便可開始作答題目！</string>
+
+    <!-- TODO: Group -->
+    <string name="group_text_Group">群組互動</string>
+    <string name="group_text_Create">組成群組</string>
+    <string name="group_text_Chat">群組聊天室</string>
+    <string name="group_text_Create_detail">可以選擇當組長或組員之後\n等待老師確認便可完成組隊！</string>
+    <string name="group_text_Chat_detail">可以跟組内的同學一起討論\n老師出的課題!</string>
+
+    <!-- TODO: Sign -->
+    <string name="sign_text_Sign">課堂簽到</string>
+    <string name="sign_error_title_Leave">確定要離開嗎？</string>
+    <string name="sign_error_title_Leave_detail">離開後可能會導致短暫時間内無法使用簽到的功能！</string>
+    <string name="sign_error_title_Timeout">接收不到老師的藍牙訊號</string>
+    <string name="sign_error_title_Timeout_detail">請等待老師廣播！\n老師已經廣播的情況下，請先離開此畫面在重啓藍牙，之後等待5秒鐘在回到此畫面！</string>
+    <string name="sign_alert_title_Send">確認簽到</string>
+    <string name="sign_alert_title_Send_Detail">確認簽到課程：</string>
+    <string name="sign_text_signup_message">簽到成功！</string>
+
+    <!-- TODO: Race -->
+    <string name="race_text_questionTitle">搶答題目敘述</string>
+    <string name="race_btn_SuccessTitle">搶答成功！</string>
+    <string name="race_btn_SuccessMessage">請同學耐心等待搶答結果!</string>
+    <string name="race_alert_EndTitle">搶答結束！</string>
+    <string name="race_alert_EndMessage_Success">回答正確！</string>
+    <string name="race_alert_EndMessage_Failed">回答錯誤！</string>
+
+    <!-- TODO: GROUP CREATE -->
+    <string name="groupCreate_Title">組成群組</string>
+    <string name="groupCreate_ChooseLeader">成爲隊長</string>
+    <string name="groupCreate_ChooseMember">成爲組員</string>
+    <string name="groupCreate_WaitingWaiting">請耐心等待老師操作</string>
+    <string name="groupCreate_WaitingTeacher">請等待老師確認</string>
+    <string name="groupCreate_WaitingMember">請耐心等待其他成員加入</string>
+    <string name="groupCreate_SelectLeader">選擇隊長</string>
+
+    <!-- TODO: LEARNING -->
+    <string name="learning_editText_StudentID">學號</string>
+    <string name="learning_editText_hint">請輸入您的學號</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

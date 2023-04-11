@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/bottom_rounded.xml" value="0.268" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/ic_baseline_book_24.xml" value="0.396" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.268" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/ic_launcher_background.xml" value="0.268" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/rounded.xml" value="0.144" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/drawable/z_rounded.xml" value="0.173" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_group_create.xml" value="0.4101851851851852" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_learning.xml" value="0.45085470085470086" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_login.xml" value="0.297008547008547" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_main.xml" value="0.21574074074074073" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_race.xml" value="0.4009259259259259" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_sign.xml" value="0.21574074074074073" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/activity_splash.xml" value="0.2514767932489452" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/custom_dialog_dropdown.xml" value="0.45085470085470086" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/custom_dialog_item.xml" value="0.45085470085470086" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/custom_dialog_loading.xml" value="0.22534142640364188" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/custom_dialog_scanning.xml" value="0.45" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/custom_dialog_text.xml" value="0.45085470085470086" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/custom_loading_screen_dialog.xml" value="0.22534142640364188" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/fragment_course.xml" value="0.4166666666666667" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/fragment_group.xml" value="0.4101851851851852" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/fragment_home.xml" value="0.29259259259259257" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/fragment_qa.xml" value="0.4451476793248945" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/rvlayout_course.xml" value="0.4451476793248945" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/rvlayout_shimmer.xml" value="0.29259259259259257" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/rvlayout_type01.xml" value="0.2547008547008547" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/rylayout_course.xml" value="0.45085470085470086" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/rylayout_list_status.xml" value="0.45085470085470086" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/layout/shimmer_layout.xml" value="0.45" />
+        <entry key="..\:/A_Project/Mcyang/App/StudentMcyang/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2740740740740741" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
